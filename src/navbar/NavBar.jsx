@@ -4,7 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 const NavBar = () => {
   return (
     <div className="shadow-sm bg-base-200">
-      <div className="max-lg:collapse lg:mb-48 w-full rounded-md container mx-auto">
+      <div className="max-lg:collapse w-full rounded-md container mx-auto">
         <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
         <label
           htmlFor="navbar-1-toggle"
