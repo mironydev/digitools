@@ -8,6 +8,7 @@ import { Suspense } from "react";
 import GuideCard from "./homepage/guidecard/GuideCard";
 import Pricing from "./homepage/pricing/Pricing";
 import BottomBanner from "./homepage/bottombanner/BottomBanner";
+import Footer from "./footer/Footer";
 
 const fetchProducts = async () => {
   const res = await fetch("/productData.json");
@@ -49,6 +50,7 @@ function App() {
         <Pricing pricingPromise={pricingPromise}></Pricing>
       </Suspense>
       <BottomBanner></BottomBanner>
+      <Footer></Footer>
 
       <ToastContainer></ToastContainer>
     </>
