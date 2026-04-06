@@ -4,6 +4,7 @@ import NavBar from "./navbar/NavBar";
 import Banner from "./homepage/banner/Banner";
 import Ratings from "./homepage/banner/Ratings";
 import Products from "./homepage/products/Products";
+import { Suspense } from "react";
 
 const fetchProducts = async () => {
   const res = await fetch("/data.json");
@@ -18,7 +19,15 @@ function App() {
       <NavBar></NavBar>
       <Banner></Banner>
       <Ratings></Ratings>
-      <Products productsPromise={productsPromise}></Products>
+      <Suspense
+        fallback={
+          <div className="flex justify-center h-screen items-center">
+            <span className="loading loading-bars loading-xl"></span>
+          </div>
+        }
+      >
+        <Products productsPromise={productsPromise}></Products>
+      </Suspense>
 
       <ToastContainer></ToastContainer>
     </>

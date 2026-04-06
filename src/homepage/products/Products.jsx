@@ -11,6 +11,8 @@ const Products = ({ productsPromise }) => {
     setIsActive(active);
   };
 
+  const [selectedProducts, setSelectedProducts] = useState([]);
+
   return (
     <div className="container mx-auto mt-28">
       <div className="text-center">
@@ -27,7 +29,7 @@ const Products = ({ productsPromise }) => {
           />
           <button
             onClick={() => handleIsActive("products")}
-            className={`relative z-10 py-2 px-4 cursor-pointer rounded-full transition-colors duration-200 ${
+            className={`relative z-10 py-2 px-6 cursor-pointer rounded-full transition-colors duration-200 font-semibold ${
               isActive === "products" ? "text-white" : ""
             }`}
           >
@@ -35,19 +37,28 @@ const Products = ({ productsPromise }) => {
           </button>
           <button
             onClick={() => handleIsActive("cart")}
-            className={`relative z-10 py-2 px-4 cursor-pointer rounded-full transition-colors duration-200 ${
+            className={`relative z-10 py-2 px-6 cursor-pointer rounded-full transition-colors duration-200 font-semibold ${
               isActive === "cart" ? "text-white" : ""
             }`}
           >
-            Cart (0)
+            Cart ({selectedProducts.length})
           </button>
         </div>
       </div>
 
       {isActive === "products" && (
-        <AvailableProducts productsData={productsData} />
+        <AvailableProducts
+          productsData={productsData}
+          selectedProducts={selectedProducts}
+          setSelectedProducts={setSelectedProducts}
+        />
       )}
-      {isActive === "cart" && <SelectedProducts />}
+      {isActive === "cart" && (
+        <SelectedProducts
+          selectedProducts={selectedProducts}
+          setSelectedProducts={setSelectedProducts}
+        />
+      )}
     </div>
   );
 };

@@ -1,11 +1,20 @@
 import React from "react";
 import Card from "../../../ui/Card";
 
-const AvailableProducts = ({ productsData }) => {
+const AvailableProducts = ({
+  productsData,
+  selectedProducts,
+  setSelectedProducts,
+}) => {
   return (
-    <div className="grid grid-cols-3 gap-6 mt-10 w-fit mx-auto">
+    <div className="grid grid-cols-3 gap-6 mt-6 w-fit mx-auto">
       {productsData.map((product) => (
-        <Card product={product} key={product.id}></Card>
+        <Card
+          product={product}
+          key={product.id}
+          selectedProducts={selectedProducts}
+          setSelectedProducts={setSelectedProducts}
+        ></Card>
       ))}
     </div>
   );

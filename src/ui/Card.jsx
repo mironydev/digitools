@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Card = ({ product }) => {
+const Card = ({ product, selectedProducts, setSelectedProducts }) => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleIsSelected = () => {
+    setSelectedProducts([...selectedProducts, product]);
+    setIsSelected(true);
+  };
+
   const { name, description, price, period, tag, features, icon } = product;
   return (
     <div className="card rounded-3xl border-2 border-base-300 max-w-md">
@@ -20,11 +27,7 @@ const Card = ({ product }) => {
             {tag}
           </span>
         </div>
-        <img
-          src={icon}
-          alt=""
-          className="w-fit border-2 border-base-200 p-2 rounded-2xl"
-        />
+        <img src={icon} alt="" className="w-fit  bg-base-200 p-2 rounded-2xl" />
         <h2 className="text-3xl font-bold">{name}</h2>
 
         <p className="text-gray-500">{description}</p>
@@ -53,8 +56,12 @@ const Card = ({ product }) => {
           ))}
         </ul>
         <div className="mt-6">
-          <button className="btn bg-linear-to-r from-[#602FF7] to-[#9415FA] text-white rounded-full w-full">
-            Buy Now
+          <button
+            onClick={handleIsSelected}
+            disabled={isSelected}
+            className="btn bg-linear-to-r from-[#602FF7] to-[#9415FA] text-white rounded-full w-full disabled:opacity-50"
+          >
+            {isSelected ? "Added to cart" : "Buy Now"}
           </button>
         </div>
       </div>
