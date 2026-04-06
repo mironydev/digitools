@@ -3,7 +3,7 @@ import React, { use } from "react";
 const Pricing = ({ pricingPromise }) => {
   const pricingData = use(pricingPromise);
   return (
-    <div className="container mx-auto mt-28">
+    <div className="container mx-auto mt-10 md:mt-28">
       <div className="text-center pb-4">
         <h2 className="text-4xl font-bold">Simple, Transparent Pricing</h2>
         <p className="text-gray-600 pt-2 pb-4">
@@ -11,7 +11,7 @@ const Pricing = ({ pricingPromise }) => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 max-w-6xl gap-10 mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-3 max-w-6xl gap-10 mx-10 md:mx-auto">
         {pricingData.map((pricing) => (
           <div
             key={pricing.id}

@@ -12,7 +12,7 @@ const Card = ({ product, selectedProducts, setSelectedProducts }) => {
 
   const { name, description, price, period, tag, features, icon } = product;
   return (
-    <div className="card rounded-3xl border-2 border-base-300 max-w-md">
+    <div className="card rounded-3xl border-2 border-base-300 max-w-md mx-5 md:mx-0">
       <div className="card-body relative">
         <div className="text-right absolute top-3 right-3">
           <span

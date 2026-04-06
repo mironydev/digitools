@@ -2,7 +2,7 @@ import React from "react";
 
 const BottomBanner = () => {
   return (
-    <div className="bg-linear-to-r from-[#602FF7] to-[#9415FA] mt-28 py-24">
+    <div className="bg-linear-to-r from-[#602FF7] to-[#9415FA] mt-10 md:mt-28 py-16 md:py-24">
       <div className="container mx-auto text-center text-white">
         <h2 className="text-4xl font-bold">
           Ready to Transform Your Workflow?

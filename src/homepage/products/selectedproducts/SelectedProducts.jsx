@@ -17,7 +17,7 @@ const SelectedProducts = ({ selectedProducts, setSelectedProducts }) => {
   };
 
   return (
-    <div className="border-2 border-base-300 px-6 py-8   rounded-3xl  mt-6 max-w-5xl mx-auto">
+    <div className="border-2 border-base-300 px-6 py-8 rounded-3xl mt-6 max-w-5xl mx-auto">
       {selectedProducts.length === 0 ? (
         <div className="text-center space-y-2">
           <h3 className="text-2xl font-semibold">Your cart is empty</h3>

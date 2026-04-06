@@ -17,7 +17,7 @@ const Products = ({ productsPromise, setCartCount }) => {
   }, [selectedProducts, setCartCount]);
 
   return (
-    <div className="container mx-auto mt-28">
+    <div className="container mx-auto mt-10 md:mt-28">
       <div className="text-center">
         <h1 className="text-4xl font-bold">Premium Digital Tools</h1>
         <p className="text-gray-700 pt-2 pb-4">
