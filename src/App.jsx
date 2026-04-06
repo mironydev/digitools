@@ -5,6 +5,7 @@ import Banner from "./homepage/banner/Banner";
 import Ratings from "./homepage/banner/Ratings";
 import Products from "./homepage/products/Products";
 import { Suspense } from "react";
+import GuideCard from "./homepage/guidecard/GuideCard";
 
 const fetchProducts = async () => {
   const res = await fetch("/data.json");
@@ -28,6 +29,7 @@ function App() {
       >
         <Products productsPromise={productsPromise}></Products>
       </Suspense>
+      <GuideCard></GuideCard>
 
       <ToastContainer></ToastContainer>
     </>
