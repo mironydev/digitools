@@ -14,6 +14,7 @@ const Pricing = ({ pricingPromise }) => {
       <div className="grid grid-cols-1 lg:grid-cols-3 max-w-6xl gap-10 mx-auto">
         {pricingData.map((pricing) => (
           <div
+            key={pricing.id}
             className={`card rounded-xl shadow-md bg-base-200 ${pricing.name === "Pro" ? "bg-linear-to-r from-[#602FF7] to-[#9415FA] text-white" : ""} max-w-md`}
           >
             <div className="relative card-body">
