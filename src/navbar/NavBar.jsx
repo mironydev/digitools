@@ -1,7 +1,7 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 
-const NavBar = () => {
+const NavBar = ({ cartCount }) => {
   return (
     <div className="shadow-sm bg-base-200">
       <div className="max-lg:collapse w-full rounded-md container mx-auto">
@@ -55,8 +55,13 @@ const NavBar = () => {
             </ul>
           </div>
           <div className="navbar-end space-x-3">
-            <button className="btn rounded-full border-none">
+            <button className="relative btn rounded-full border-none hover:bg-base-200 shadow-none text-xl">
               <FaShoppingCart />
+              {cartCount > 0 && (
+                <span className="absolute top-2 right-3 bg-red-500 text-white text-[8px] px-1 rounded-full">
+                  {cartCount}
+                </span>
+              )}
             </button>
             <button className="btn rounded-full">Login</button>
             <button className="btn bg-linear-to-r from-[#602FF7] to-[#9415FA] text-white rounded-full">

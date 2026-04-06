@@ -4,7 +4,7 @@ import NavBar from "./navbar/NavBar";
 import Banner from "./homepage/banner/Banner";
 import Ratings from "./homepage/banner/Ratings";
 import Products from "./homepage/products/Products";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import GuideCard from "./homepage/guidecard/GuideCard";
 import Pricing from "./homepage/pricing/Pricing";
 import BottomBanner from "./homepage/bottombanner/BottomBanner";
@@ -25,9 +25,10 @@ const fetchPricing = async () => {
 const pricingPromise = fetchPricing();
 
 function App() {
+  const [cartCount, setCartCount] = useState(0);
   return (
     <>
-      <NavBar></NavBar>
+      <NavBar cartCount={cartCount}></NavBar>
       <Banner></Banner>
       <Ratings></Ratings>
       <Suspense
@@ -37,7 +38,11 @@ function App() {
           </div>
         }
       >
-        <Products productsPromise={productsPromise}></Products>
+        <Products
+          productsPromise={productsPromise}
+          cartCount={cartCount}
+          setCartCount={setCartCount}
+        ></Products>
       </Suspense>
       <GuideCard></GuideCard>
       <Suspense

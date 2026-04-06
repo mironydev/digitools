@@ -1,8 +1,8 @@
-import React, { use, useState } from "react";
+import React, { use, useState, useEffect } from "react";
 import SelectedProducts from "./selectedproducts/SelectedProducts";
 import AvailableProducts from "./availableproducts/AvailableProducts";
 
-const Products = ({ productsPromise }) => {
+const Products = ({ productsPromise, setCartCount }) => {
   const productsData = use(productsPromise);
 
   const [isActive, setIsActive] = useState("products");
@@ -12,6 +12,9 @@ const Products = ({ productsPromise }) => {
   };
 
   const [selectedProducts, setSelectedProducts] = useState([]);
+  useEffect(() => {
+    setCartCount(selectedProducts.length);
+  }, [selectedProducts, setCartCount]);
 
   return (
     <div className="container mx-auto mt-28">

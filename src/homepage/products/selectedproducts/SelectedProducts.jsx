@@ -1,5 +1,6 @@
 import React from "react";
 import SelectedCard from "../../../ui/SelectedCard";
+import { toast } from "react-toastify";
 
 const SelectedProducts = ({ selectedProducts, setSelectedProducts }) => {
   const handleProductDelete = (product) => {
@@ -7,7 +8,14 @@ const SelectedProducts = ({ selectedProducts, setSelectedProducts }) => {
       (includedProduct) => includedProduct.id !== product.id,
     );
     setSelectedProducts(filterProducts);
+    toast.error(`${product.name} removed from cart!`);
   };
+
+  const handleCheckout = () => {
+    setSelectedProducts([]);
+    toast.success("Checkout successful!");
+  };
+
   return (
     <div className="border-2 border-base-300 px-6 py-8   rounded-3xl  mt-6 max-w-5xl mx-auto">
       {selectedProducts.length === 0 ? (
@@ -37,7 +45,10 @@ const SelectedProducts = ({ selectedProducts, setSelectedProducts }) => {
               )}
             </p>
           </div>
-          <button className="btn bg-linear-to-r from-[#602FF7] to-[#9415FA] text-white rounded-full w-full">
+          <button
+            onClick={handleCheckout}
+            className="btn bg-linear-to-r from-[#602FF7] to-[#9415FA] text-white rounded-full w-full"
+          >
             Proceed to Checkout
           </button>
         </div>
