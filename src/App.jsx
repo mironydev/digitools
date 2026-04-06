@@ -6,13 +6,21 @@ import Ratings from "./homepage/banner/Ratings";
 import Products from "./homepage/products/Products";
 import { Suspense } from "react";
 import GuideCard from "./homepage/guidecard/GuideCard";
+import Pricing from "./homepage/pricing/Pricing";
 
 const fetchProducts = async () => {
-  const res = await fetch("/data.json");
+  const res = await fetch("/productData.json");
   return res.json();
 };
 
 const productsPromise = fetchProducts();
+
+const fetchPricing = async () => {
+  const res = await fetch("/pricingData.json");
+  return res.json();
+};
+
+const pricingPromise = fetchPricing();
 
 function App() {
   return (
@@ -30,6 +38,15 @@ function App() {
         <Products productsPromise={productsPromise}></Products>
       </Suspense>
       <GuideCard></GuideCard>
+      <Suspense
+        fallback={
+          <div className="flex justify-center h-screen items-center">
+            <span className="loading loading-bars loading-xl"></span>
+          </div>
+        }
+      >
+        <Pricing pricingPromise={pricingPromise}></Pricing>
+      </Suspense>
 
       <ToastContainer></ToastContainer>
     </>
