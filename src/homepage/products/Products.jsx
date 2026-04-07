@@ -17,14 +17,14 @@ const Products = ({ productsPromise, setCartCount }) => {
   }, [selectedProducts, setCartCount]);
 
   return (
-    <div className="container mx-auto mt-10 md:mt-28">
-      <div className="text-center">
+    <div className="container mx-auto mt-14 md:mt-20 lg:mt-28">
+      <div className="text-center px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold">Premium Digital Tools</h1>
         <p className="text-gray-700 pt-2 pb-4">
           Choose from our curated collection of premium digital products
           designed to boost your productivity and creativity.
         </p>
-        <div className="border-2 border-stone-200 w-fit mx-auto rounded-full relative">
+        <div className="border-2 border-stone-200 w-fit mx-auto rounded-full relative mt-3">
           <div
             className={`absolute top-0 bottom-0 rounded-full bg-linear-to-r from-[#602FF7] to-[#9415FA] transition-all duration-200 ${
               isActive === "products" ? "left-0 right-1/2" : "left-1/2 right-0"

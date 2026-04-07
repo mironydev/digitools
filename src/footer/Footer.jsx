@@ -5,11 +5,11 @@ import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
     <div className="bg-[#101727]">
-      <div className="container mx-auto text-white">
-        <div className="flex flex-col md:flex-row py-20 text-center md:text-left gap-10 md:gap-0">
-          <div className="flex-1 space-y-4">
+      <div className="container mx-auto text-white px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 py-20 text-center md:text-left gap-10 md:gap-16 lg:gap-0">
+          <div className="flex-1 space-y-4 md:col-span-3 lg:col-span-1 text-center lg:text-left">
             <h3 className="text-3xl font-bold">Digitools</h3>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm mx-auto md:w-3/4 lg:w-full">
               Premium digital tools for creators, professionals, and businesses.
               Work smarter with our suite of powerful tools.
             </p>
@@ -47,7 +47,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="flex-1 flex flex-col items-center">
+          <div className="flex-1 flex flex-col items-center md:col-span-3 lg:col-span-1">
             <h4 className="text-lg font-medium">Social Links</h4>
             <ul className="flex gap-2 pt-2">
               <li>
@@ -83,10 +83,16 @@ const Footer = () => {
             <p>© 2026 Digitools. All rights reserved.</p>
           </div>
           <div>
-            <ul className="flex gap-2 items-center">
-              <li className="btn btn-ghost">Privacy Policy</li>
-              <li className="btn btn-ghost">Terms of Service</li>
-              <li className="btn btn-ghost">Cookies</li>
+            <ul className="flex gap- items-center text-sm gap-3 pt-2">
+              <li className="hover:text-white active:text-white duration-100">
+                Privacy Policy
+              </li>
+              <li className="hover:text-white active:text-white duration-100">
+                Terms of Service
+              </li>
+              <li className="hover:text-white active:text-white duration-100">
+                Cookies
+              </li>
             </ul>
           </div>
         </div>

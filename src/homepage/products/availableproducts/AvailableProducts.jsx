@@ -7,7 +7,7 @@ const AvailableProducts = ({
   setSelectedProducts,
 }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 w-fit mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 w-fit mx-auto md:px-6 lg:px-0">
       {productsData.map((product) => (
         <Card
           product={product}

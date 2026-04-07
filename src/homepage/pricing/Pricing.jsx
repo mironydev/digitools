@@ -3,19 +3,19 @@ import React, { use } from "react";
 const Pricing = ({ pricingPromise }) => {
   const pricingData = use(pricingPromise);
   return (
-    <div className="container mx-auto mt-10 md:mt-28">
-      <div className="text-center pb-4">
+    <div className="container mx-auto mt-14 md:mt-20 lg:mt-28">
+      <div className="text-center pb-4 px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold">Simple, Transparent Pricing</h2>
         <p className="text-gray-600 pt-2 pb-4">
           Choose the plan that fits your needs. Upgrade or downgrade anytime.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 max-w-6xl gap-10 mx-10 md:mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-3 max-w-6xl gap-10 mx-auto justify-items-center px-10 sm:px-0">
         {pricingData.map((pricing) => (
           <div
             key={pricing.id}
-            className={`card rounded-xl shadow-md bg-base-200 ${pricing.name === "Pro" ? "bg-linear-to-r from-[#602FF7] to-[#9415FA] text-white" : ""} max-w-md`}
+            className={`card rounded-xl shadow-md bg-base-200 max-w-sm w-full ${pricing.name === "Pro" ? "bg-linear-to-r from-[#602FF7] to-[#9415FA] text-white" : ""}`}
           >
             <div className="relative card-body">
               {pricing.name === "Pro" ? (

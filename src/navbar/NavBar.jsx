@@ -4,7 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 const NavBar = ({ cartCount }) => {
   return (
     <div className="shadow-sm bg-base-200">
-      <div className="max-lg:collapse w-full rounded-md container mx-auto">
+      <div className="max-lg:collapse w-full rounded-md container mx-auto lg:px-8">
         <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
         <label
           htmlFor="navbar-1-toggle"
@@ -55,7 +55,7 @@ const NavBar = ({ cartCount }) => {
             </ul>
           </div>
           <div className="navbar-end space-x-3">
-            <button className="relative btn rounded-full border-none hover:bg-base-200 shadow-none text-xl">
+            <button className="relative btn rounded-full border-none bg-transparent shadow-none text-xl hidden sm:block">
               <FaShoppingCart />
               {cartCount > 0 && (
                 <span className="absolute top-2 right-3 bg-red-500 text-white text-[8px] px-1 rounded-full">
@@ -63,7 +63,7 @@ const NavBar = ({ cartCount }) => {
                 </span>
               )}
             </button>
-            <button className="btn rounded-full">Login</button>
+            <button className="btn rounded-full hidden sm:block">Login</button>
             <button className="btn bg-linear-to-r from-[#602FF7] to-[#9415FA] text-white rounded-full">
               Get Started
             </button>
