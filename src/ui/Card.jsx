@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { toast } from "react-toastify";
 
 const Card = ({ product, selectedProducts, setSelectedProducts }) => {
-  const [isSelected, setIsSelected] = useState(false);
+  const isSelected = selectedProducts.some((p) => p.id === product.id);
+
+  const { name, description, price, period, tag, features, icon } = product;
 
   const handleIsSelected = () => {
     setSelectedProducts([...selectedProducts, product]);
-    setIsSelected(true);
     toast.success(`${name} added to cart!`);
   };
 
-  const { name, description, price, period, tag, features, icon } = product;
   return (
     <div className="card rounded-3xl border-2 border-base-300 max-w-md mx-5 md:mx-0">
       <div className="card-body relative">
